@@ -7,6 +7,9 @@ var todoRouter = require('./routers/meantodo.router');
 var port = process.env.PORT || 8080;
 var mongoURI = process.env.MONGOURI || require('./secrets').mongoURI;
 
+server.get('/', function(request, response){
+  response.sendFile('index.html', {root: __dirname + '/public/html'});
+});
 
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
