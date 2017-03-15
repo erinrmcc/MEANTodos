@@ -9,8 +9,6 @@ var Todo = mongoose.model('Todo', todoSchema);
 
 module.exports = Todo;
 
-
-
 // var completeProject = new Todo({
 //   description: 'Complete this MeanTodo project before time runs out!',
 //   completed: false
