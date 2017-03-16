@@ -11,6 +11,7 @@ server.get('/', function(request, response){
   response.sendFile('index.html', {root: __dirname + '/public/html'});
 });
 
+server.use(express.static(__dirname + '/public'));
 server.use(bodyParser.json());
 server.use(bodyParser.urlencoded({extended: true}));
 
