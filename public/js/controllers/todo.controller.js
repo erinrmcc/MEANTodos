@@ -7,15 +7,16 @@
     function TodoController($scope, TodoService){
       $scope.todos = [];
       $scope.newTodo = {};
-      $scope.getTodos = getTodos;
       $scope.addTodo = addTodo;
       $scope.deleteTodo = deleteTodo;
+      getTodos();
 
       function addTodo(newTodo){
         console.log('Creating a new todo...');
         TodoService.create(newTodo)
                   .then(function(response){
                     getTodos();
+                    $scope.newTodo = {}; //clears in the input field
                   });
       }
 
